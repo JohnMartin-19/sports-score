@@ -4,7 +4,7 @@ import { Product } from "../model/product.model";
 
 @Component({
   selector: 'store',
-  templateUrl: './store.component.html'
+  templateUrl: "store.component.html"
 })
 export class StoreComponent{
   constructor(private repository: ProductRepository) {}
@@ -13,7 +13,7 @@ export class StoreComponent{
     return this.repository.getProducts();
   }
 
-  get categories(): String[]{
+  get categories(): string[]{
     return this.repository.getCategories();
   }
 }

@@ -5,7 +5,7 @@ import { StaticDataSource } from './static.datasource';
 @Injectable()
 export class ProductRepository{
   private products:Product[] = [];
-  private categories: String[]=[];
+  private categories: string[]=[];
   constructor(private dataSource:StaticDataSource) {
     dataSource.getProducts().subscribe(data => {
       this.products = data;
@@ -19,7 +19,7 @@ export class ProductRepository{
   getProduct(id:number): Product | undefined {
     return this.products.find(p => p.id == id);
   }
-  getCategories(): String[] {
+  getCategories(): string[] {
     return this.categories;
   }
 

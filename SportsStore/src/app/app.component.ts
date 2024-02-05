@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 @Component({
-  selector: "app",
+selector: "app",
 standalone:true,
-  template: `<div class="bg-success p-2 text-center text-white">
+template: `<div class="bg-success p-2 text-center text-white">
                 This is SportsStore
               </div>`
 })

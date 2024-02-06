@@ -1,12 +1,15 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgModule} from '@angular/core';
 import { Product } from './product.model';
 import { StaticDataSource } from './static.datasource';
 
 @Injectable()
+@NgModule({
+ providers:[ProductRepository]
+})
 export class ProductRepository{
   private products:Product[] = [];
   private categories: string[]=[];
-  constructor(private dataSource:StaticDataSource) {
+  constructor(dataSource:StaticDataSource) {
     dataSource.getProducts().subscribe(data => {
       this.products = data;
       this.categories = data.map(p => p.category ?? "(None)")

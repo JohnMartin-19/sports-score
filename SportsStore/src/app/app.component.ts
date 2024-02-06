@@ -1,5 +1,5 @@
 
-import { Component, NO_ERRORS_SCHEMA } from "@angular/core";
+import { Component } from "@angular/core";
 @Component({
 selector: "app",
 standalone:true,

@@ -1,0 +1,16 @@
+<div class="floar-end">
+    <small class="fs-6">
+        Your Cart:
+        <span *ngIf = "cart.itemCount > 0" > 
+            {{cart.itemCount}} item(s)
+            {{cart.cartPrice | currency:'KSH':"symbol":'2.2-2'}}
+        </span>
+        <span *ngIf="cart.itemCount == 0">
+            (empty)
+        </span>
+    </small>
+    <button class="btn btn-sm bg-dark text-while" [disabled]="cart.itemCount==0">
+        <i class="fa fa-shopping-cart"></i>
+    </button>
+
+</div>

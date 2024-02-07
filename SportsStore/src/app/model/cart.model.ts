@@ -36,10 +36,16 @@ export class Cart {
     private recalculate(){
         this.itemCount = 0
         this.cartPrice = 0
-        this.lines.forEach(1 => {
-            this.itemCount += 1.quantity;
-            this.cartPrice += 1.lineTotal
+        this.lines.forEach(l => {
+            this.itemCount += l.quantity;
+            this.cartPrice += l.lineTotal
         })
     }
 }
-export class CartLine
+export class CartLine {
+    constructor(public product: Product, public quantity: number) {}
+
+    get lineTotal(){
+        return this.quantity * (this.product.price ?? 0.00)
+    }
+}

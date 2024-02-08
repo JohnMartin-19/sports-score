@@ -12,7 +12,7 @@ export class OrderRepository {
     getOrders():Order[]{
         return this.orders
     }
-    saveOrders(order:Order): Observable<Order> {
+    saveOrder(order:Order): Observable<Order> {
         return this.dataSource.saveOrder(order)
     }
 }

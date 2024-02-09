@@ -11,7 +11,7 @@ const PORT = 3500;
 export class RestDataSource {
     baseUrl:string;
     constructor(private http : HttpClient){
-        this.baseUrl = '${PROTOCOL}://${location.hostname}:${PORT}/'
+        this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`
     }
     getProducts(): Observable<Product[]> {
         return this.http.get<Product[]>(this.baseUrl + 'products');

@@ -30,7 +30,7 @@ export class RestDataSource {
         }));
     };
 
-    save(product:Product) : Observable < Product > {
+    saveProduct(product:Product) : Observable < Product > {
         return this.http.post<Product>(this.baseUrl + 'products',product,this.getOptions())
     }
 

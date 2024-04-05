@@ -5,8 +5,10 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatDividerModule} from '@angular/material/divider'
 import {MatButtonModule} from '@angular/material/button'
 import {MatTableModule} from '@angular/material/table'
+import { MatPaginatorModule } from "@angular/material/paginator";
 
-const features: any[] = [MatTableModule,MatButtonModule,MatDividerModule,MatIconModule,MatSidenavModule,MatToolbarModule];
+
+const features: any[] = [MatPaginatorModule,MatTableModule,MatButtonModule,MatDividerModule,MatIconModule,MatSidenavModule,MatToolbarModule];
 
 @NgModule({
     imports:[features],

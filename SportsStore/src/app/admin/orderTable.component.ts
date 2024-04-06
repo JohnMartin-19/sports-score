@@ -12,11 +12,12 @@ export class OrderTableComponent{
 
     dateSource = new MatTableDataSource<Order>(this.repository.getOrders())
     differ: IterableDiffer<Order>;
+    dataSource: any;
 
     constructor(private repository: OrderRepository,differs: IterableDiffers){
         this.differ = differs.find(this.repository.getOrders()).create();
         this.dataSource.filter = 'true'
-        this.dataSource.filterPredicate = (order,include) => {
+        this.dataSource.filterPredicate = (order: { shipped: any; },include: { toString: () => string; }) => {
             return !order.shipped || include.toString() == 'true'
         }
     }
@@ -26,7 +27,7 @@ export class OrderTableComponent{
     }
 
     set includeShipped(include: boolean) {
-        return this.dataSource.flter = include.toString()
+         this.dataSource.flter = include.toString()
     }
     toggleShipped(order: Order){
         order.shipped = !order.shipped;
@@ -36,7 +37,7 @@ export class OrderTableComponent{
         this.repository.deleteOrder(id);
     }
     ngDoCheck(){
-        let changes = this.differ(this.repository.getOrders())
+        let changes = this.differ?.diff(this.repository.getOrders())
         if (changes != null){
             this.dataSource.data = this.repository.getOrders()
         }

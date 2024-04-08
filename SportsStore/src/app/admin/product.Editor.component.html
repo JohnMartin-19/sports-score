@@ -9,22 +9,22 @@
     <mat-label>Name</mat-label>
     <input matInput name="name" [(ngModel)]="product.name" />
     </mat-form-field>
-    <mat-form-field>
-        <mat-label>Category</mat-label>
-        <input matInput name="category" [(ngModel)]="product.category" />
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Description</mat-label>
-        <input name="description"  matInput [(ngModel)]="product.description"/>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Price</mat-label>
-        <input matInput name="price" [(ngModel)]="product.price" />
-    </mat-form-field>
-    <button type="submit" mat-flat-button color="primary">
-        {{editing ? "Save" : "Create"}}
-    </button>
-    <button type="reset" mat-stroked-button  routerLink="/admin/main/products">
-        Cancel
-    </button>
+    <mat-form-field>
+        <mat-label>Category</mat-label>
+        <input matInput name="category" [(ngModel)]="product.category" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input name="description" matInput [(ngModel)]="product.description"/>
+    </mat-form-field>
+    <mat-form-field>
+    <mat-label>Price</mat-label>
+        <input matInput name="price" [(ngModel)]="product.price" />
+    </mat-form-field>
+    <button type="submit" mat-flat-button color="primary">
+        {{editing ? "Save" : "Create"}}
+    </button>
+    <button type="reset" mat-stroked-button  routerLink="/admin/main/products">
+        Cancel
+    </button>
 </form>

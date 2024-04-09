@@ -3,14 +3,14 @@ const https = require('https')
 const fs = require('fs')
 const history = require('connect-history-api-fallback')
 const jsonServer = require('json-server')
-const bodyParser = require('bodyParser') 
+const bodyParser = require('body-parser') 
 const auth = require('./authMiddleware')
 const router = jsonServer.router('serverdata.json')
 
-const enableHttp = false
+const enableHttps = true
 
 const ssloptions = {}
-if (enableHttp) {
+if (enableHttps) {
     ssloptions.cert = fs.readFileSync("./ssl/sportsstore.crt");
     ssloptions.key = fs.readFileSync('./ssl/sportsstore.pem');
 }
